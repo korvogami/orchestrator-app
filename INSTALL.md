@@ -25,7 +25,7 @@ Both end in the same place: the orchestrator running on your computer, ready for
 
 ### On Windows
 
-1. Double-click the installer.
+1. Double-click the installer. (If your browser held the download back, choose **Keep** in its downloads list first. In Edge: the three dots by the file, **Keep**, **Show more**, **Keep anyway**.)
 2. Windows may say **"Windows protected your PC"**. That's because the app isn't signed with a paid certificate yet, not because something is wrong. Click **More info**, then **Run anyway**.
 3. It installs by itself in a few seconds (no questions) and opens.
 4. Follow the three steps on screen (below).
@@ -48,19 +48,19 @@ Both end in the same place: the orchestrator running on your computer, ready for
 **2. Sign in.** Two buttons, each opening that service's own sign-in page in your browser. The app never sees your passwords, and never sees or keeps your Claude sign-in.
 
 - **Sign in to Claude:** sign in on Claude's page with your own Claude account.
-- **Sign in to GitHub:** only if you're joining a setup. Starting your own doesn't need it: leave that line as it is. To sign in, a black window opens with a code. Press Enter in it, then type the code on GitHub's page and approve.
+- **Sign in to GitHub:** only if you're joining a setup. Starting your own doesn't need it: leave that line as it is. To sign in, a black window opens. Press Enter in it until it shows a code, then type the code on GitHub's page and approve. If both computers are yours, use the same Claude, GitHub and Jira accounts as on the first one.
 - Then press **Check again**. The line for each sign-in you did turns green.
 
 **3. Join a setup, or start your own.**
 
 - **Join a setup** (a second computer):
-  1. On the computer that already runs the orchestrator, open the app, go to **Keys and settings**, press **Add a computer**, then **Copy it**. Send it to yourself (an email or a note). It has no passwords or keys in it, and it works once, for 30 minutes: if it runs out, press **Add a computer** again.
-  2. Paste it into **Join code**, give this computer a short name (like "Desk PC"), and type your Jira email and a Jira key (the app's link makes one: name it after this computer).
+  1. On the computer that already runs the orchestrator, open the app, go to **Keys and settings**, press **Add a computer**, then **Copy it**. Send it to yourself (an email or a note). It has no passwords or keys in it, and it works once, for 30 minutes: if it runs out, press **Add a computer** again. No app on that computer yet? Install it there first, with the same installer: it finds the orchestrator that's already running.
+  2. Paste the whole thing into **Join code** (it starts with JOIN-; the short code on the card isn't enough on a new computer), give this computer a short name (like "Desk PC"), and type your Jira email and a Jira key (the app's link makes one: name it after this computer).
   3. Press **Join**. It copies the orchestrator from GitHub and checks the board.
 - **Start my own** (you're new): seven short steps, one screen each, with a picture of what to look for. Press **Next** after each.
   1. **Claude:** it checks Claude is installed and signed in. If not, press **Install Claude Code** or **Sign in to Claude**: Claude's own page opens in your browser. Sign in and click **Authorize**; the screen turns green by itself.
   2. **Your name:** your first name.
-  3. **Your own Jira:** **Make a free Jira** (sign up with your email) and **Make a Jira key** open the right pages. Type your Jira site, email and key.
+  3. **Your own Jira:** **Make a free Jira** (sign up with your email) and **Make a Jira key** open the right pages. On the key page, use the first button, **Create API token**, not the one "with scopes". Type your Jira site, email and key.
   4. **Your board:** press **Make my board**. Then **Open my board**, add a column called **Review** just before Done (the + to the right of Done), and press **Check my board**.
   5. **Your settings:** press **Make my orchestrator**.
   6. **Your Claude chat:** connect Atlassian in Claude's settings, then **Copy my instructions** and paste them into your Claude profile.
@@ -78,6 +78,7 @@ Every message in the app says what happened and what to do. The common ones:
 
 | It says | Do this |
 |---|---|
+| Windows says Smart App Control blocked the installer | Some newer Windows 11 computers block every app that isn't signed with a paid certificate, with no "Run anyway". Look under **Settings**, **Privacy & security**, **Windows Security**, **App & browser control**, **Smart App Control**. Turning it off lets the installer run, but lowers that protection for everything else, and Windows may not let you turn it back on. Or tell us on the download page and wait for the signed version. |
 | Windows' own installer (winget) isn't on this computer yet | Open the Microsoft Store, search for **App Installer**, press **Update**, then press **Install** again. Or use **Get it yourself**. |
 | There's no Jira site at ... | Open Jira in your browser and copy the address up to the first "/", like `yourname.atlassian.net`. |
 | Jira didn't accept that email and key | Make a new key and paste the whole thing. Use the email you sign in to Jira with. |
@@ -159,4 +160,6 @@ Then just talk to Claude: "what's going on?", "make the button bigger on that la
 - **Your keys stay on your computer.** The Jira key is kept on this computer only, locked to your account (Windows' data protection, or the Mac's keychain).
 - **It uses your Claude plan.** Workers use your plan's allowance. When it runs out, the orchestrator waits until it comes back, and says so.
 - **It keeps itself up to date.** On Windows the app installs each new version by itself when no job is running, and opens again with everything as it was. On a Mac it says when a new version is on the download page: quit the app, download it, drag it into Applications and choose Replace. With your own setup, the orchestrator also takes new versions from the page by itself, on Windows and Mac. Your settings and board stay as they are either way.
+- **Keep it running.** A sleeping computer can't start your jobs. Leave it plugged in and set it to never sleep while plugged in (Windows: Settings, System, Power. Mac: System Settings, Battery or Energy). After a restart, sign in to the computer and the orchestrator starts again by itself. Closing the app's window doesn't stop it; **Quit, and stop the orchestrator**, in its little icon by the clock, does.
+- **Stopping or removing a joined computer.** For a while: **Pause this computer** in its app. For good: remove the app there, then delete the card called "Computer:" and its name from the board's Done column, so it leaves the status. Its Jira key can be deleted on Jira's key page.
 - **Removing it.** Windows: Settings, Apps, Korvogami Orchestrator, Uninstall. Mac: drag it from Applications to the Bin. Your orchestrator's folder (in your home folder) stays until you delete it.
