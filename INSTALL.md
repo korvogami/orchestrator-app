@@ -48,7 +48,7 @@ Both end in the same place: the orchestrator running on your computer, ready for
 **2. Sign in.** Two buttons, each opening that service's own sign-in page in your browser. The app never sees your passwords, and never sees or keeps your Claude sign-in.
 
 - **Sign in to Claude:** sign in on Claude's page with your own Claude account.
-- **Sign in to GitHub:** only if you're joining a setup. Starting your own doesn't need it: leave that line as it is. To sign in, a black window opens. Press Enter in it until it shows a code, then type the code on GitHub's page and approve. If both computers are yours, use the same Claude, GitHub and Jira accounts as on the first one.
+- **Sign in to GitHub:** only if you're joining a setup. Starting your own doesn't need it: leave that line as it is. To sign in, press **Sign in to GitHub**: GitHub's page opens in your browser, and the app shows a short code (already copied). Type or paste it on GitHub's page and approve. The line turns green by itself. If both computers are yours, use the same Claude, GitHub and Jira accounts as on the first one.
 - Then press **Check again**. The line for each sign-in you did turns green.
 
 **3. Join a setup, or start your own.**
@@ -61,7 +61,7 @@ Both end in the same place: the orchestrator running on your computer, ready for
   1. **Claude:** it checks Claude is installed and signed in. If not, press **Install Claude Code** or **Sign in to Claude**: Claude's own page opens in your browser. Sign in and click **Authorize**; the screen turns green by itself.
   2. **Your name:** your first name.
   3. **Your own Jira:** **Make a free Jira** (sign up with your email) and **Make a Jira key** open the right pages. On the key page, use the first button, **Create API token**, not the one "with scopes". Type your Jira site, email and key.
-  4. **Your board:** press **Make my board**. Then **Open my board**, add a column called **Review** just before Done (the + to the right of Done), and press **Check my board**.
+  4. **Your board:** press **Make my board**. It's ready straight away, with Jira's own three columns (To Do, In Progress, Done): there's nothing to add or change on it. A job that needs your answer gets a `needs-you` tag there instead of a column of its own, and your Claude chat tells you about it.
   5. **Your settings:** press **Make my orchestrator**.
   6. **Your Claude chat:** connect Atlassian in Claude's settings, then **Copy my instructions** and paste them into your Claude profile.
   7. **Your first job:** press **Start my orchestrator**. In 2 to 5 minutes it says **"Your first job is finished. You're done!"**, with a welcome note.
@@ -82,7 +82,7 @@ Every message in the app says what happened and what to do. The common ones:
 | Windows' own installer (winget) isn't on this computer yet | Open the Microsoft Store, search for **App Installer**, press **Update**, then press **Install** again. Or use **Get it yourself**. |
 | There's no Jira site at ... | Open Jira in your browser and copy the address up to the first "/", like `yourname.atlassian.net`. |
 | Jira didn't accept that email and key | Make a new key and paste the whole thing. Use the email you sign in to Jira with. |
-| The board ... needs a column called "Review" | On the board, press the **+** after the last column and add **Review**, then move it before **Done**. |
+| Joining: the board ... needs a column called "Review" | The setup you're joining moves finished jobs to a Review column. On its board, press the **+** after the last column and add **Review**, then move it before **Done**. (Starting your own never asks for this.) |
 | This GitHub account can't see the orchestrator's code | Ask whoever gave you the join code to add your GitHub account to the orchestrator's code on GitHub. |
 | GitHub didn't let this computer in | Press **Sign in to GitHub** again in step 2. |
 
@@ -148,7 +148,7 @@ For a setup you started yourself. Do it once, and any Claude chat of yours, the 
 
 Then just talk to Claude: "what's going on?", "make the button bigger on that last one", "yes, go with the first choice".
 
-**Why it matters.** When a job asks you something, or you want a finished job changed, Claude posts your words on that job's card, starting "From Sam (via Claude):" (with your first name). That start is how the orchestrator knows the words are yours. It carries on with your answer, and on a finished job it starts a follow-up job by itself. On a finished job, a comment that doesn't start that way does nothing.
+**Why it matters.** When a job asks you something, or you want a finished job changed, Claude posts your words on that job's card, starting "From Sam (via Claude):" (with your first name). That start is how the orchestrator knows the words are yours. It carries on with your answer, and on a finished job it starts a follow-up job by itself. On a finished job, a comment that doesn't start that way does nothing. And when you only want a reason kept on a card (why you closed or dropped it), Claude starts it "From Sam (via Claude): Note only, nothing to build:", and the orchestrator never starts a job from it.
 
 - **Typing on a card yourself?** Start your comment the same way: "From Sam: make the button bigger".
 - **Changed your first name in the orchestrator's settings?** Copy the note again and replace the old one in Claude.
@@ -161,5 +161,5 @@ Then just talk to Claude: "what's going on?", "make the button bigger on that la
 - **It uses your Claude plan.** Workers use your plan's allowance. When it runs out, the orchestrator waits until it comes back, and says so.
 - **It keeps itself up to date.** On Windows the app installs each new version by itself when no job is running, and opens again with everything as it was. On a Mac it says when a new version is on the download page: quit the app, download it, drag it into Applications and choose Replace. With your own setup, the orchestrator also takes new versions from the page by itself, on Windows and Mac. Your settings and board stay as they are either way.
 - **Keep it running.** A sleeping computer can't start your jobs. Leave it plugged in and set it to never sleep while plugged in (Windows: Settings, System, Power. Mac: System Settings, Battery or Energy). After a restart, sign in to the computer and the orchestrator starts again by itself. Closing the app's window doesn't stop it; **Quit, and stop the orchestrator**, in its little icon by the clock, does.
-- **Stopping or removing a joined computer.** For a while: **Pause this computer** in its app. For good: remove the app there, then delete the card called "Computer:" and its name from the board's Done column, so it leaves the status. Its Jira key can be deleted on Jira's key page.
+- **Stopping or removing a joined computer.** For a while: **Pause this computer** in its app. For good, on that computer: open the app, go to **Keys and settings**, and press **Leave this setup**. Jobs it's in the middle of can finish first, or go back to the list for another computer. Then it stops, forgets the setup's key and leaves the status. For good, when it's off or gone: on another computer of the setup, press **Remove** next to it on the same screen, or tell Claude "remove Desk PC" (with its name). Either way, one thing is left for you: delete the Jira key you made for that computer on Jira's key page (the app says which). The other computers get a new lock on the keys they share by themselves. Changed your mind? Make a new code with **Add a computer** and press **Join again** on it.
 - **Removing it.** Windows: Settings, Apps, Korvogami Orchestrator, Uninstall. Mac: drag it from Applications to the Bin. Your orchestrator's folder (in your home folder) stays until you delete it.
