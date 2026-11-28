@@ -11,7 +11,7 @@ Both end in the same place: the orchestrator running on your computer, ready for
 
 ## What you need first
 
-- **A computer:** Windows 10 or 11, or a Mac (macOS 13 or newer).
+- **A computer:** Windows 10 or 11, or a Mac (macOS 13 or newer). An Arch Linux computer (Omarchy too) can join a setup that already runs, with no installer: see [On Linux](#on-linux).
 - **A paid Claude plan on your own account** (Pro or Max). The workers run on it. The free plan can't run them.
 - **The installer file**, from the orchestrator's download page on GitHub, [github.com/korvogami/orchestrator-app](https://github.com/korvogami/orchestrator-app) (or from whoever shared the orchestrator with you). You don't need a GitHub account to download it:
   - Windows: [`Korvogami-Orchestrator-Setup.exe`](https://github.com/korvogami/orchestrator-app/releases/latest/download/Korvogami-Orchestrator-Setup.exe)
@@ -43,7 +43,8 @@ Both end in the same place: the orchestrator running on your computer, ready for
 
 - Windows may ask **"Do you want to allow this app to make changes to your device?"**. Click **Yes**.
 - A Mac may ask for your password (the one you sign in to the Mac with), or show a box from Apple about "command line developer tools": click **Install**.
-- If one won't install, its line says why and has a **Get it yourself** button: it opens that tool's own download page. Download it, open the file, click through with the usual choices, then press **Check again**.
+- While they install, each line says whether it's installing now, waiting its turn or done, and the line above them says how far it's got ("Installing 2 of 5: Git…"). The line of the one installing says when Windows is about to ask for permission. To see what the installers are doing, open **Show what the installers are doing** under the list.
+- If one won't install, its line says why and has a **Get it yourself** button: it opens that tool's own download page. Download it, open the file, click through with the usual choices, then press **Check again**. Or open **Do it by hand** under it: the steps to do it yourself, with a line to paste.
 
 **2. Sign in.** Two buttons, each opening that service's own sign-in page in your browser. The app never sees your passwords, and never sees or keeps your Claude sign-in.
 
@@ -132,6 +133,12 @@ What it is: a desktop app called "Korvogami Orchestrator" that runs Claude Code 
 Don't change anything else on this computer.
 ```
 
+## On Linux
+
+There's no Linux app or installer yet. An Arch Linux computer, Omarchy included, can still join a setup that already runs, from a terminal, in about 20 minutes: install the tools with pacman, sign in to Claude Code and GitHub, copy the setup's orchestrator from GitHub, join with a join code, and switch on starting at sign-in. Once it's in, it takes every kind of job, changes to the orchestrator itself too. It keeps its keys in the computer's keyring (GNOME Keyring), starts by itself when you sign in, and starts again if it ever stops. On a small laptop it can take only light jobs (reports, research, docs) and leave the heavy ones to your other computers.
+
+The step-by-step guide comes with the orchestrator's code, under "Arch Linux" in its docs (`docs/arch-linux.md`), not with the installer: ask the setup's owner for it, and Claude Code on that computer can walk you through it. Starting your own setup on Linux, and other Linux systems, aren't covered yet.
+
 ## Your first job
 
 Make a card in your board's **To Do** column saying what you want in plain words. If it isn't about a code project, add a line `Repo: none`. Within a minute the orchestrator moves it to **In Progress**, starts a worker, and writes its report on the card.
@@ -157,7 +164,7 @@ Then just talk to Claude: "what's going on?", "make the button bigger on that la
 ## Good to know
 
 - **Your accounts stay yours.** Each person signs in to Claude on Claude's own page, with their own account and plan. The app never collects, copies or keeps a Claude sign-in. That's Anthropic's rule for tools like this, and it's how the app works.
-- **Your keys stay on your computer.** The Jira key is kept on this computer only, locked to your account (Windows' data protection, or the Mac's keychain).
+- **Your keys stay on your computer.** The Jira key is kept on this computer only, locked to your account (Windows' data protection, the Mac's keychain, or Linux's keyring).
 - **It uses your Claude plan.** Workers use your plan's allowance. When it runs out, the orchestrator waits until it comes back, and says so.
 - **It keeps itself up to date.** On Windows the app installs each new version by itself when no job is running, and opens again with everything as it was. On a Mac it says when a new version is on the download page: quit the app, download it, drag it into Applications and choose Replace. With your own setup, the orchestrator also takes new versions from the page by itself, on Windows and Mac. Your settings and board stay as they are either way.
 - **Keep it running.** A sleeping computer can't start your jobs. Leave it plugged in and set it to never sleep while plugged in (Windows: Settings, System, Power. Mac: System Settings, Battery or Energy). After a restart, sign in to the computer and the orchestrator starts again by itself. Closing the app's window doesn't stop it; **Quit, and stop the orchestrator**, in its little icon by the clock, does.
