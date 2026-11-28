@@ -12,6 +12,7 @@ It installs in about 15 minutes, with no terminal and nothing to type but your b
 |---|---|
 | Windows 10 or 11 | [Korvogami-Orchestrator-Setup.exe](https://github.com/korvogami/orchestrator-app/releases/latest/download/Korvogami-Orchestrator-Setup.exe) |
 | Mac (macOS 13 or newer) | [Korvogami-Orchestrator-mac.dmg](https://github.com/korvogami/orchestrator-app/releases/latest/download/Korvogami-Orchestrator-mac.dmg) |
+| Arch Linux (Omarchy too) | No download yet. A Linux computer can join a setup that already runs, from a terminal: the setup's owner has the step-by-step guide. |
 
 Older versions and each file's fingerprint are on the [Releases](https://github.com/korvogami/orchestrator-app/releases) page.
 
